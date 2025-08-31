@@ -37,10 +37,10 @@ export function slugify(joiner: string, ...items: string[]): string {
         .filter((item) => item != null && item.trim().length > 0)
         .map((item) => item.trim().toLowerCase())
         .join(joiner)
-        .replace(/\s+/g, joiner) // normalize spaces
-        .replace(/[^a-z0-9-]+/g, "") // remove non-ASCII
-        .replace(new RegExp(`${joiner}+`, "g"), joiner) // normalize repeated joiner
-        .replace(new RegExp(`^${joiner}+|${joiner}+$`, "g"), ""); // trim leading/trailing joiner
+        .replace(/\s+/g, joiner)
+        .replace(new RegExp(`[^a-z0-9${joiner}]+`, "g"), "")
+        .replace(new RegExp(`${joiner}+`, "g"), joiner)
+        .replace(new RegExp(`^${joiner}+|${joiner}+$`, "g"), "");
 }
 
 /**
