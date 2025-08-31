@@ -1,0 +1,38 @@
+{
+    "private": false,
+    "sideEffects": false,
+    "type": "module",
+    "license": "ISC",
+    "version": "0.0.1",
+    "name": "@v-termeh/utils",
+    "description": "Utility functions for DOM, HTTP, and common browser operations.",
+    "main": "./dist/utils.umd.js",
+    "module": "./dist/utils.es.js",
+    "types": "./dist/utils.d.ts",
+    "files": [
+        "dist"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/v-termeh/utils.git"
+    },
+    "author": {
+        "name": "Mojtaba Ekramy",
+        "email": "m.ajamekramy@gmail.com",
+        "url": "https://github.com/mekramy"
+    },
+    "keywords": [
+        "utils",
+        "utility",
+        "helper"
+    ],
+    "scripts": {
+        "build": "vite build",
+        "prepare": "npm run build"
+    },
+    "devDependencies": {
+        "typescript": "^5.9.2",
+        "vite": "^7.1.3",
+        "vite-plugin-dts": "^4.5.4"
+    }
+}
