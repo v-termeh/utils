@@ -21,5 +21,10 @@ export default defineConfig({
             },
         },
     },
-    plugins: [dts({ insertTypesEntry: true })],
+    plugins: [
+        dts({
+            insertTypesEntry: true,
+            copyDtsFiles: true,
+        }),
+    ],
 });

@@ -3,7 +3,7 @@
     "sideEffects": false,
     "type": "module",
     "license": "ISC",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "name": "@v-termeh/utils",
     "description": "Utility functions for DOM, HTTP, and common browser operations.",
     "main": "./dist/utils.umd.js",
@@ -12,6 +12,13 @@
     "files": [
         "dist"
     ],
+    "exports": {
+        ".": {
+            "import": "./dist/utils.es.js",
+            "require": "./dist/utils.umd.js",
+            "types": "./dist/utils.d.ts"
+        }
+    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/v-termeh/utils.git"
