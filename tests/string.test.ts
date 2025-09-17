@@ -1,5 +1,11 @@
 import { describe, it, expect } from "vitest";
-import { concat, truncate, slugify, slugifyUnicode, mapValue } from "../src/string";
+import {
+    concat,
+    truncate,
+    slugify,
+    slugifyUnicode,
+    mapValue,
+} from "../src/string";
 
 describe("concat", () => {
     it("concatenates non-empty items", () => {

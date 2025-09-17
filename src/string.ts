@@ -6,7 +6,8 @@
 export function concat(...items: unknown[]): string {
     return items
         .map((item) => {
-            if (item == null || (typeof item === "number" && isNaN(item))) return "";
+            if (item == null || (typeof item === "number" && isNaN(item)))
+                return "";
             const str = String(item).trim();
             return str.length > 0 ? str : "";
         })
@@ -66,7 +67,10 @@ export function slugifyUnicode(joiner: string, ...items: string[]): string {
  * @param replacements - An object mapping values to replacements.
  * @returns The mapped value or the original value.
  */
-export function mapValue(v: string, replacements: Record<string, string>): string {
+export function mapValue(
+    v: string,
+    replacements: Record<string, string>
+): string {
     if (v in replacements) return replacements[v];
     if ("*" in replacements) return replacements["*"];
     return v;

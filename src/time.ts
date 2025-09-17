@@ -103,7 +103,11 @@ export function toHMS(
  * @param locale - The locale ("en" or "fa").
  * @returns A translated string (e.g., "2 years" or "۲ سال").
  */
-function translateDuration(value: number, unit: string, locale: "en" | "fa"): string {
+function translateDuration(
+    value: number,
+    unit: string,
+    locale: "en" | "fa"
+): string {
     const translation = DURATION_TRANSLATIONS[unit]?.[locale] ?? unit;
     return `${value} ${translation}`;
 }

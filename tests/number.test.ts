@@ -1,5 +1,10 @@
 import { describe, it, expect } from "vitest";
-import { parseNumber, extractNumeric, unifySeparator, formatNumber } from "../src/number";
+import {
+    parseNumber,
+    extractNumeric,
+    unifySeparator,
+    formatNumber,
+} from "../src/number";
 
 describe("parseNumber", () => {
     it("parses valid numbers", () => {

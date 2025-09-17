@@ -1,6 +1,13 @@
 import { describe, it, expect } from "vitest";
 import moment from "moment-jalaali";
-import { RFC3339, parse, parseRFC3339, parseFrom, ago, toHMS, humanize } from "../src/time";
+import {
+    parse,
+    parseRFC3339,
+    parseFrom,
+    ago,
+    toHMS,
+    humanize,
+} from "../src/time";
 
 describe("parse", () => {
     it("parses valid date", () => {
@@ -63,7 +70,11 @@ describe("toHMS", () => {
         expect(toHMS(3661)).toEqual({ hours: 1, minutes: 1, seconds: 1 });
     });
     it("converts milliseconds to h:m:s", () => {
-        expect(toHMS(3661000, "milliseconds")).toEqual({ hours: 1, minutes: 1, seconds: 1 });
+        expect(toHMS(3661000, "milliseconds")).toEqual({
+            hours: 1,
+            minutes: 1,
+            seconds: 1,
+        });
     });
     it("handles negative durations", () => {
         expect(toHMS(-3661)).toEqual({ hours: 1, minutes: 1, seconds: 1 });

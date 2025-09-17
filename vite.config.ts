@@ -1,6 +1,7 @@
 import { resolve } from "path";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
+import pkg from "./package.json";
 
 /// <reference types="vitest" />
 // Configure Vitest (https://vitest.dev/config/)
@@ -15,9 +16,11 @@ export default defineConfig({
             formats: ["es", "cjs", "umd"],
         },
         rollupOptions: {
-            external: [],
+            external: [...Object.keys(pkg.peerDependencies || {})],
             output: {
-                globals: {},
+                globals: {
+                    "moment-jalaali": "moment",
+                },
             },
         },
     },

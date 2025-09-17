@@ -22,6 +22,8 @@ describe("parseNumber", () => {
                 .strong("John")
                 .span(", Have a nice day")
                 .toString()
-        ).toBe("<span>Hello</span>&nbsp;<strong>John</strong><span>, Have a nice day</span>");
+        ).toBe(
+            "<span>Hello</span>&nbsp;<strong>John</strong><span>, Have a nice day</span>"
+        );
     });
 });

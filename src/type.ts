@@ -8,7 +8,10 @@ export type PrimitiveType = string | number | boolean | null;
  * @typedef {PrimitiveType | PrimitiveType[] | Record<string, PrimitiveType>} CompoundType
  * Represents a complex data type composed of primitives, arrays of primitives, or records of primitives.
  */
-export type CompoundType = PrimitiveType | PrimitiveType[] | Record<string, PrimitiveType>;
+export type CompoundType =
+    | PrimitiveType
+    | PrimitiveType[]
+    | Record<string, PrimitiveType>;
 
 /**
  * Checks if a value is of type string.
@@ -77,7 +80,12 @@ export function isArray<T>(v: unknown): v is T[] {
  * @returns True if the value is an object, false otherwise.
  */
 export function isObject<T extends object>(v: unknown): v is T {
-    return v !== null && v !== undefined && typeof v === "object" && !Array.isArray(v);
+    return (
+        v !== null &&
+        v !== undefined &&
+        typeof v === "object" &&
+        !Array.isArray(v)
+    );
 }
 
 /**
@@ -103,7 +111,9 @@ export function isPrimitiveArray(v: unknown): v is PrimitiveType[] {
  * @param v The value to check.
  * @returns True if the value is an object and all its property values are primitives, false otherwise.
  */
-export function isPrimitiveRecord(v: unknown): v is Record<string, PrimitiveType> {
+export function isPrimitiveRecord(
+    v: unknown
+): v is Record<string, PrimitiveType> {
     return isObject(v) && Object.values(v).every(isPrimitive);
 }
 
