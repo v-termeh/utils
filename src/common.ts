@@ -32,18 +32,18 @@ export function toArray<T>(v: unknown): T[] {
  * @param obj - The object to clone.
  * @returns A deep clone of the object.
  */
-export function cloneDeep<T>(obj: T): T {
+export function deepClone<T>(obj: T): T {
     if (obj === null || typeof obj !== "object") return obj;
 
     if (obj instanceof Date) return new Date(obj.getTime()) as any;
     if (obj instanceof Map) return new Map(Array.from(obj.entries())) as any;
     if (obj instanceof Set) return new Set(Array.from(obj.values())) as any;
-    if (Array.isArray(obj)) return obj.map(cloneDeep) as any;
+    if (Array.isArray(obj)) return obj.map(deepClone) as any;
 
     const cloned: any = {};
     for (const key in obj) {
         if (Object.prototype.hasOwnProperty.call(obj, key)) {
-            cloned[key] = cloneDeep((obj as any)[key]);
+            cloned[key] = deepClone((obj as any)[key]);
         }
     }
     return cloned;
