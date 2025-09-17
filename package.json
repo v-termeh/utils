@@ -3,7 +3,7 @@
     "sideEffects": false,
     "type": "module",
     "license": "ISC",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "name": "@v-termeh/utils",
     "description": "Utility functions for DOM, HTTP, and common browser operations.",
     "main": "./dist/utils.umd.js",
