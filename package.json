@@ -3,10 +3,10 @@
     "sideEffects": false,
     "type": "module",
     "license": "ISC",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "name": "@v-termeh/utils",
     "description": "Utility functions for DOM, HTTP, and common browser operations.",
-    "main": "./dist/utils.umd.js",
+    "main": "./dist/utils.cjs.js",
     "module": "./dist/utils.es.js",
     "types": "./dist/utils.d.ts",
     "files": [
@@ -15,7 +15,7 @@
     "exports": {
         ".": {
             "import": "./dist/utils.es.js",
-            "require": "./dist/utils.umd.js",
+            "require": "./dist/utils.cjs.js",
             "types": "./dist/utils.d.ts"
         }
     },

@@ -13,15 +13,10 @@ export default defineConfig({
             name: "utils",
             entry: resolve(__dirname, "src", "index.ts"),
             fileName: (format) => `utils.${format}.js`,
-            formats: ["es", "cjs", "umd"],
+            formats: ["es", "cjs"],
         },
         rollupOptions: {
             external: [...Object.keys(pkg.peerDependencies || {})],
-            output: {
-                globals: {
-                    "moment-jalaali": "moment",
-                },
-            },
         },
     },
     plugins: [
